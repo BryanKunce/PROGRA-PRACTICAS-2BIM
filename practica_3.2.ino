@@ -44,10 +44,10 @@ Serial.begin(9600);
 
 
 
-Serial.print("B: ");
+Serial.print("R: ");
 Serial.print(lectura);
 
-Serial.print(" R: ");
+Serial.print(" B: ");
 Serial.print(lectura2);
 
 
