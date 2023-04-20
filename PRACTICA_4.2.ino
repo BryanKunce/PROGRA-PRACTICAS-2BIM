@@ -2,11 +2,11 @@
 Servo Servo_1;
 
 
-const bool Botton1=1;
-const bool Botton2=2;
-const bool Botton3=3;
-const bool Botton4=4;
-const bool Botton5=5;
+const int Botton1=1;
+const int Botton2=2;
+const int Botton3=3;
+const int Botton4=4;
+const int Botton5=5;
 #define buzzer
 
 
