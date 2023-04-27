@@ -21,9 +21,9 @@ char ingresaPass[5]; // tiene que tener el mismo tamaño del arreglo de la contr
 int indice=0;
 int pradar = 34;
 int buzzere = 36;
-#define buzzeron();tone(buzzere,300)
+#define buzzeron();tone(buzzere,1500)
 #define buzzeroff();noTone(buzzere)
-#define retraso()delay(1000)
+#define retraso()delay(1500)
 
 
 void setup()
@@ -59,6 +59,7 @@ buzzeron();
     }
     else{
       Serial.println(" Movimiento sospechoso");
+      buzzeron();
     }
     indice=0;
   }
