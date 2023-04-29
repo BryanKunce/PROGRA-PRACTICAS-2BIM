@@ -1,14 +1,15 @@
-#include <Keypad.h>
+/*BRYAN KUNCE 2022096 EB5BM*/
+#include <Keypad.h>//PONEMOS LA LIBRERIA DEL TECLADO
 
 const int FILAS = 4;
 const int COLUMNAS= 4;
-char keys[FILAS][COLUMNAS]={
+char keys[FILAS][COLUMNAS]={// SE PONE EL ARREGLO
   {'1','2','3','A'},
   {'4','5','6','B'},
   {'7','8','9','C'},
   {'*','0','#','D'}
 };
-byte pinesFila[FILAS]={11,10,9,8};
+byte pinesFila[FILAS]={11,10,9,8};//DESIGNAMOS LOS PINES PARA EL TECLADO TANTO DE LAS FILAS COMO DE LAS COLUMNAS
 byte pinesColumna[COLUMNAS]={7,6,5,4};
 
 
@@ -19,11 +20,11 @@ char teclaPrecionada;
 char pass[5]="1988"; //Poner en el arreglo 1 posicion mas a la que tendra la contraseña correcta
 char ingresaPass[5]; // tiene que tener el mismo tamaño del arreglo de la contraseña correcta
 int indice=0;
-int pradar = 34;
-int buzzere = 36;
-#define buzzeron();tone(buzzere,1500)
+int pradar = 50;
+int buzzere = 2;
+#define buzzeron();tone(buzzere,959)
 #define buzzeroff();noTone(buzzere)
-#define retraso()delay(1500)
+#define retraso()delay(10)
 
 
 void setup()
@@ -54,13 +55,12 @@ buzzeron();
   if(indice==4){ //cuando se llegue al limite del arreglo verificara si esta correcta o no la contraseña
     if(strcmp(pass,ingresaPass)==0){ //Verifica que la contraseña esta correcta
       Serial.println(" Todo en orden ");
-      Serial.println();
       buzzeroff();
     }
     else{
       Serial.println(" Movimiento sospechoso");
       buzzeron();
     }
-    indice=0;
+    indice=0;//FINALIZA EL PROGRAMA
   }
 }
