@@ -1,4 +1,5 @@
-#include <Keypad.h>
+/*BRYAN KUNCE 2022096 EM5BM*/
+#include <Keypad.h>//PONEMOS LA LIBRERIA Y DECLARAMOS NUESTRAS VARIBLES Y LAS IN/OUT DIGITALES
 #define FILAS 4
 #define COLUMNAS 4
 #define a 22
@@ -13,7 +14,7 @@
 #define on(pin)digitalWrite(pin,HIGH)
 
 
-char keys[FILAS][COLUMNAS] = {
+char keys[FILAS][COLUMNAS] = {//SE PONE EL ARREGLO
   {'1','2','3','A'},
   {'4','5','6','B'},
   {'7','8','9','C'},
@@ -28,7 +29,7 @@ Keypad teclado = Keypad(makeKeymap(keys),Filas, Columnas,FILAS,COLUMNAS);
 
 void setup()
 {
- Serial.begin(9600);
+ Serial.begin(9600);//INICIAMOS NUESTRO MONITOR SERIAL/CONSOLA
  salida(22); 
  salida(24);
  salida(26);
@@ -219,4 +220,4 @@ void loop(){
 
 
   }
-}
+}//TERMINA EL PROGRAMA Y SE REPITE EL VOIDLOOP
